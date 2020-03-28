@@ -1,5 +1,7 @@
-import LoginFormComponent from './LoginFormComponent';
+import NavbarComponent from './NavbarComponent/NavbarComponent';
+import LoginFormComponent from './LoginFormComponent/LoginFormComponent';
 
 export {
-    LoginFormComponent
+    NavbarComponent,
+    LoginFormComponent,
 }

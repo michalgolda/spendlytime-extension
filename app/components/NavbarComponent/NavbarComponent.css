@@ -1,0 +1,67 @@
+.navbar{
+    width: calc(100% - 40px);
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar__logo{
+    width: 150px;
+    height: 50px;
+    padding-top: 20px;
+    float: left;
+}
+
+.navbar__logo:hover{
+    cursor: pointer;
+}
+
+.navbar__logo__text{
+    font-size: 1.1rem;
+    color: #00D856;
+}
+
+.navbar__logo__text_small{
+    font-size: .8rem;
+}
+
+.navbar__account{
+    width: 210px;
+    height: 50px;
+    float: left;
+    padding-top: 10px;
+    text-align: right;
+}
+
+.navbar__account__wrapper{
+    float: right;
+    width: auto;
+}
+
+.navbar__account_avatar{
+    width: 35px;
+    height: 35px;
+    float: left;
+    background: #FFF;
+    border-radius: 50%;
+    text-align: right;
+}
+
+.navbar__account_avatar:hover{
+    cursor: pointer;
+}
+
+.navbar__account__email{
+    color: #fff;
+    float: left;
+    font-size: .9rem;
+    font-weight: 100;
+    text-align: right;
+    width: calc(100% - 45px);
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.navbar__account__email:hover{
+    cursor: pointer;
+}

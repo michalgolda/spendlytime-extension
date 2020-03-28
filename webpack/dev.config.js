@@ -42,7 +42,7 @@ const baseDevConfig = () => ({
     })
   ],
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['*', '.js'],
   },
   module: {
     rules: [{

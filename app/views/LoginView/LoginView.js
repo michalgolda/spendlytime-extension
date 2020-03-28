@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import style from '../App.css';
+import style from './LoginView.css';
+import globalStyle from '../../App.css';
 
-// Components
-import { LoginFormComponent } from '../components';
+import { LoginFormComponent } from '../../components';
 
 export default class LoginView extends Component{
     render(){
         return(
-            <div className={style.view}>
+            <div className={globalStyle.view}>
                 <div className={style.logo}>
                     <h1 className={style.logo__text}>SpendlyTime<small className={style.logo__small}>.com</small></h1>
                 </div>

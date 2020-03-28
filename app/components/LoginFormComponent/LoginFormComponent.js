@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import style from '../App.css';
+import style from './LoginFormComponent.css';
 
 export default class LoginFormComponent extends Component{
     render(){
