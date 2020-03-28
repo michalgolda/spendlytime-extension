@@ -1,0 +1,114 @@
+.view{
+    background: #323232;
+    height: 500px;
+    width: 400px;
+}
+
+.logo{
+    height: 36px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+.logo__text{
+    color: #00D856;
+    font-size: 2.1rem;
+}
+
+.logo__small{
+    font-size: 1.7rem;
+}
+
+.login{
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    margin-top: 30px;
+    /* background: red; */
+}
+
+.login__group{
+    height: 35px;
+    width: 300px;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.login__input{
+    height: 35px;
+    width: 280px;
+    background: #404040;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding-left: 20px;
+    color: #FFF;
+    font-size: .9rem;
+}
+
+.login__input_email{
+
+}
+
+.login__input_password{
+
+}
+
+.login__button{
+    height: 35px;
+    width: 300px;
+    background: #00D856;
+    border-radius: 50px;
+    color: #FFF;
+    font-size: .9rem;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+}
+
+.login__button:hover{
+    cursor: pointer;
+}
+
+.wrapper{
+    text-align: center;
+    margin-top: 60px;
+}
+
+.wrapper__text__title{
+    color: #FFF;
+    font-size: 1.4rem;
+}
+
+.wrapper__text__title_small{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.wrapper__text__title_strong{
+    color: #00D856;
+}
+
+.wrapper__text__description{
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: 100;
+    width: 305px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.footer{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
+.footer__text{
+    color: #999999;
+    font-size: .8rem;
+}
