@@ -1,10 +1,10 @@
 {
   "version": "0.0.0",
-  "name": "Spendlytime",
+  "name": "Spendlytime - Developer",
   "manifest_version": 2,
   "description": "This extension is used to track your time on the Internet.",
   "browser_action": {
-    "default_title": "Spendlytime",
+    "default_title": "Spendlytime - Developer",
     "default_popup": "popup.html"
   },
   "web_accessible_resources": [
