@@ -1,7 +1,7 @@
 import LoginView from './LoginView/LoginView';
-import MainView from './MainView/MainView';
+import TraceListView from './TraceListView/TraceListView';
 
 export {
     LoginView,
-    MainView
+    TraceListView
 }

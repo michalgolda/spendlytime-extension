@@ -8,12 +8,11 @@ export default function WithAuth(WrappedComponent){
 
             this.state = { isLogged: false };
         }
-
         render(){
-            if(this.state.isLogged){
-                return <WrappedComponent {...this.props} />;
-            } else {
+            if(!this.state.isLogged){
                 return <Redirect to="/login"/>;
+            } else {
+                return <WrappedComponent {...this.props}/>
             }
         }
     }

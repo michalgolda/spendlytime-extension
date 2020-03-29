@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
 import style from './LoginView.css';
-import globalStyle from '../../App.css';
 
 import { LoginFormComponent } from '../../components';
 
 export default class LoginView extends Component{
     render(){
         return(
-            <div className={globalStyle.view}>
+            <div>
                 <div className={style.logo}>
                     <h1 className={style.logo__text}>SpendlyTime<small className={style.logo__small}>.com</small></h1>
                 </div>
@@ -25,9 +24,6 @@ export default class LoginView extends Component{
                     </div>
                     <LoginFormComponent />
                 </div>
-                <footer className={style.footer}>
-                    <p className={style.footer__text}>Ⓒ 2020 SpendlyTime</p>
-                </footer>
             </div>
         );
     }
