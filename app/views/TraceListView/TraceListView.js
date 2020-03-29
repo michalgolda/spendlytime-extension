@@ -6,10 +6,15 @@ import { WithAuthComponent as WithAuth } from '../../components';
 import style from './TraceListView.css';
 
 class TraceListView extends Component{
-    render(){
-        const { data } = this.props;
 
-        if(!data){
+    constructor(props){
+        super(props);
+
+        this.state = { data: null };
+    }
+
+    render(){
+        if(!this.state.data){
             return(
                 <div className={style.wrapper}>
                     <div className={style.noData}>
@@ -18,7 +23,7 @@ class TraceListView extends Component{
                             Aby rozpocząć analizę spędzonego czasu na danej stronie kliknij w start
                         </p>
                     </div>
-                    <Link to="/test" className={style.noData__addTrace}>+</Link>
+                    <Link to="/trace/add" className={style.noData__addTrace}>+</Link>
                 </div>
             );
         } else {

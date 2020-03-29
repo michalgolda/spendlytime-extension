@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import { loggedIn } from '../../utils';
 
 import style from './NavbarComponent.css';
 
 export default class NavbarComponent extends Component{
     render(){
+       if(loggedIn){
         return(
             <div className={style.navbar}>
                 <div className={style.navbar__logo}>
-                    <h1 className={style.navbar__logo__text}>
-                        SpendlyTime<small className={style.navbar__logo__text_small}>.com</small>
-                    </h1>
+                    <Link className={style.navbar__link} to="/popup.html">
+                        <h1 className={style.navbar__logo__text}>
+                            SpendlyTime<small className={style.navbar__logo__text_small}>.com</small>
+                        </h1>
+                    </Link>
                 </div>
                 <div className={style.navbar__account}>
                     <div className={style.navbar__account__wrapper}>
@@ -21,5 +27,8 @@ export default class NavbarComponent extends Component{
                 </div>
             </div>
         );
+       } else {
+           return null;
+       }
     }
 }

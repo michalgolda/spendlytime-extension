@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
+import { loggedIn } from '../../utils';
+
 export default function WithAuth(WrappedComponent){
     class WithAuthComponent extends Component{
-        constructor(props){
-            super(props);
-
-            this.state = { isLogged: false };
-        }
         render(){
-            if(!this.state.isLogged){
+            if(!loggedIn){
                 return <Redirect to="/login"/>;
             } else {
                 return <WrappedComponent {...this.props}/>

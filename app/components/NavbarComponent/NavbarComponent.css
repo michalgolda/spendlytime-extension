@@ -21,6 +21,10 @@
     color: #00D856;
 }
 
+.navbar__link{
+    text-decoration: none;
+}
+
 .navbar__logo__text_small{
     font-size: .8rem;
 }

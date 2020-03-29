@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import globalStyle from './App.css';
 
-import { LoginView, TraceListView } from './views';
 import { NavbarComponent } from './components';
+import { views } from './views';
 
 export default class App extends Component {
   render(){
@@ -13,15 +13,9 @@ export default class App extends Component {
         <div className={globalStyle.view}>
           <NavbarComponent />
           <Switch>
-            <Route exact path="/popup.html">
-              <TraceListView/>
-            </Route>
-            <Route path="/login">
-              <LoginView/>
-            </Route>
-            <Route path="/test">
-              <h1>awdawd</h1>
-            </Route>
+            <Route exact path="/popup.html" component={views.TraceListView} />
+            <Route path="/login" component={views.LoginView} />
+            <Route path="/trace/add" component={views.AddTraceView} />
           </Switch>
 
           <footer className={globalStyle.footer}>
