@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import globalStyle from '../../App.css';
 import style from './MainView.css';
 
-import { NavbarComponent, AddTrackFormComponent } from '../../components';
+import { NavbarComponent, WithAuthComponent as WithAuth } from '../../components';
 
 
-export default class MainView extends Component{
+class MainView extends Component{
     render(){
         return(
             <div className={globalStyle.view}>
@@ -28,3 +28,5 @@ export default class MainView extends Component{
         );
     }
 }
+
+export default WithAuth(MainView);
