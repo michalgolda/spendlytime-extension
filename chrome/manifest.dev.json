@@ -13,6 +13,6 @@
   "background": {
     "page": "background.html"
   },
-  "permissions": ["tabs"],
-  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
+  "permissions": ["tabs", "storage"],
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 'unsafe-eval'; script-src-elem * 'unsafe-inline'; connect-src http://localhost:3000 https://localhost:3000 ws://localhost:8000; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
 }
