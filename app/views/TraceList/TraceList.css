@@ -43,3 +43,55 @@
 .noData__addTrace:hover{
     cursor: pointer;
 }
+
+.container{
+    width: calc(100% - 40px);
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.form{
+    width: 100%;
+    height: 60px;
+}
+
+.form__container{
+}
+
+.form__input{
+    height: 35px;
+    width: 300px;
+    background: #404040;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding-left: 20px;
+    font-size: .9rem;
+    color: #00D856;
+    float: left;
+    text-align: center;
+}
+.form__submit{
+    width: 35px;
+    height:  35px;
+    border-radius: 50%;
+    background: #00D856;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    text-decoration: none;
+    float: left;
+    margin-left: 5px;
+}
+
+.form__submit:hover{
+    cursor: pointer;
+}
+
+.list{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}

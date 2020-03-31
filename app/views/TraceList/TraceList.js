@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { WithAuth } from '../../components';
+import { WithAuth, TraceItem } from '../../components';
 
 import style from './TraceList.css';
 
+import { convertStringUrl } from '../../utils';
+
+
+@connect(
+    state => ({
+        browserData: state.browserData
+    })
+)
 class TraceList extends Component{
-
-    constructor(props){
-        super(props);
-
-        this.state = { data: null };
-    }
-
     render(){
-        if(!this.state.data){
+
+        const { currentTab } = this.props.browserData;
+        const currentUrl = convertStringUrl(currentTab.url);
+        const fakeData = [{'url': 'https://google.com', time: '31:31'}, {'url': 'https://facebook.com', time: '12:31'}]
+
+        if(false){
             return(
                 <div className={style.wrapper}>
                     <div className={style.noData}>
@@ -27,7 +34,21 @@ class TraceList extends Component{
                 </div>
             );
         } else {
-            return <h1>Track list</h1>;
+            return(
+                <div className={style.container}>
+                    <form className={style.form}>
+                        <div className={style.form__container}>
+                            <input className={style.form__input} type="text" defaultValue={currentUrl.origin}/>
+                        </div>
+                        <button className={style.form__submit}>+</button>
+                    </form>
+                    <div className={style.list}>
+                        {fakeData.map((trace) =>
+                            <TraceItem key={trace.url} url={trace.url} time={trace.time} />
+                        )}
+                    </div>
+                </div>
+            );
         }
     }
 }
