@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 
 import style from './AddTrace.css';
-
 import { WithAuth } from '../../components';
 
+import { connect } from 'react-redux';
+
+@connect(
+    state => ({
+        browserData: state.browserData
+    })
+)
 class AddTrace extends Component{
+
+    componentDidMount(){
+        console.log(this.props.browserData);
+    }
+
     render(){
         return(
             <div className={style.wrapper}>

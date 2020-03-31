@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { trace } from './trace.reducer';
+import { tracesReducer} from './traces.reducer';
+import { browserDataReducer } from './browserData.reducer';
 
 export const rootReducer = combineReducers({
-    trace
+    traces: tracesReducer,
+    browserData: browserDataReducer
 });

@@ -20,8 +20,11 @@ function promisifyAll(obj, list) {
 // let chrome extension api support Promise
 promisifyAll(chrome, [
   'tabs',
-  'storage'
 ]);
 
+promisifyAll(chrome.storage, [
+  'local',
+])
+
 require('./background/inject');
-require('./background/url');
+require('./background/tabs');

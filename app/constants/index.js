@@ -1,5 +1,5 @@
-import { traceConstants } from './trace.constants';
+import { tracesConstants } from './traces.constants';
 
 export {
-    traceConstants
+    tracesConstants,
 }
