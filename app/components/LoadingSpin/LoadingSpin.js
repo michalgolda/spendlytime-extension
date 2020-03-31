@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import style from './LoadingSpinComponent.css';
+import style from './LoadingSpin.css';
 
-export default class LoadingSpinComponent extends Component{
+export default class LoadingSpin extends Component{
     render(){
         return(
             <div className={style.spinner}>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import style from './AddTraceView.css';
+import style from './AddTrace.css';
 
-import { WithAuthComponent as WithAuth } from '../../components';
+import { WithAuth } from '../../components';
 
-class AddTraceView extends Component{
+class AddTrace extends Component{
     render(){
         return(
             <div className={style.wrapper}>
@@ -26,4 +26,4 @@ class AddTraceView extends Component{
     }
 }
 
-export default WithAuth(AddTraceView);
+export default WithAuth(AddTrace);

@@ -1,11 +1,11 @@
-import NavbarComponent from './NavbarComponent/NavbarComponent';
-import WithAuthComponent from './WithAuthComponent/WithAuthComponent';
-import LoginFormComponent from './LoginFormComponent/LoginFormComponent';
-import LoadingSpinComponent from './LoadingSpinComponent/LoadingSpinComponent';
+import Navbar from './Navbar/Navbar';
+import WithAuth from './WithAuth/WithAuth';
+import LoginForm from './LoginForm/LoginForm';
+import LoadingSpin from './LoadingSpin/LoadingSpin';
 
 export {
-    NavbarComponent,
-    WithAuthComponent,
-    LoginFormComponent,
-    LoadingSpinComponent
+    Navbar,
+    WithAuth,
+    LoginForm,
+    LoadingSpin
 }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import style from './LoginView.css';
+import style from './Login.css';
 
-import { LoginFormComponent } from '../../components';
+import { LoginForm } from '../../components';
 
-export default class LoginView extends Component{
+export default class Login extends Component{
     render(){
         return(
             <div>
@@ -22,7 +22,7 @@ export default class LoginView extends Component{
                             Aby móc korzystać w pełni z aplikacji musisz się zalogować.
                         </p>
                     </div>
-                    <LoginFormComponent />
+                    <LoginForm />
                 </div>
             </div>
         );

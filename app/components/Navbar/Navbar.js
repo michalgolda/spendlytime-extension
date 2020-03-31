@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { loggedIn } from '../../utils';
 
-import style from './NavbarComponent.css';
+import style from './Navbar.css';
 
-export default class NavbarComponent extends Component{
+export default class Navbar extends Component{
     render(){
        if(loggedIn){
         return(

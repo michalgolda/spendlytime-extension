@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { WithAuthComponent as WithAuth } from '../../components';
+import { WithAuth } from '../../components';
 
-import style from './TraceListView.css';
+import style from './TraceList.css';
 
-class TraceListView extends Component{
+class TraceList extends Component{
 
     constructor(props){
         super(props);
@@ -32,4 +32,4 @@ class TraceListView extends Component{
     }
 }
 
-export default WithAuth(TraceListView);
+export default WithAuth(TraceList);

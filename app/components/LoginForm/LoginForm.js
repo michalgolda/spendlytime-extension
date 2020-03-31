@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import style from './LoginFormComponent.css';
+import style from './LoginForm.css';
 
-export default class LoginFormComponent extends Component{
+export default class LoginForm extends Component{
     render(){
         return(
             <form className={style.login}>

@@ -1,9 +1,9 @@
-import LoginView from './LoginView/LoginView';
-import AddTraceView from './AddTraceView/AddTraceView';
-import TraceListView from './TraceListView/TraceListView';
+import Login from './Login/Login';
+import AddTrace from './AddTrace/AddTrace';
+import TraceList from './TraceList/TraceList';
 
 export const views = {
-    LoginView,
-    AddTraceView,
-    TraceListView
+    Login,
+    AddTrace,
+    TraceList
 }
