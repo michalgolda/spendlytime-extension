@@ -28,4 +28,4 @@ promisifyAll(chrome.storage, [
 
 require('./background/inject');
 require('./background/tabs');
-require('./background/contextMenu');
+require('./background/contextMenus');
