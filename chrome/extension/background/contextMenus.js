@@ -5,3 +5,9 @@ chrome.contextMenus.create({
     title: "Start track timer",
     contexts: ["all"]
 });
+
+chrome.contextMenus.onClicked.addListener((event) => {
+    if(event.menuItemId === CONTEXT_MENU_ID){
+        console.log("Clicked on context menu option.");
+    }
+});
