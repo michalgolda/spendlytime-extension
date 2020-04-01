@@ -1,15 +1,17 @@
 import { tracesConstants } from '../constants';
 
-export function tracesReducer(state = {}, action){
+const initialState = { loading: false, data: [] };
+
+export function tracesReducer(state = initialState, action){
     switch(action.type){
-        case tracesConstants.FETCH_TRACE_REQUEST:
+        case tracesConstants.FETCH_TRACES_REQUEST:
             return { loading: true };
-        case tracesConstants.FETCH_TRACE_SUCCESS:
+        case tracesConstants.FETCH_TRACES_SUCCESS:
             return {
                 loading: false,
                 data: action.data
             }
-        case tracesConstants.FETCH_TRACE_ERROR:
+        case tracesConstants.FETCH_TRACES_ERROR:
             return { loading: false };
         default:
             return state;

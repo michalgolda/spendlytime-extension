@@ -19,5 +19,5 @@
     "page": "background.html"
   },
   "permissions": ["tabs", "storage", "contextMenus"],
-  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 'unsafe-eval'; script-src-elem * 'unsafe-inline'; connect-src http://localhost:3000 https://localhost:3000 ws://localhost:8000; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 'unsafe-eval'; script-src-elem * 'unsafe-inline'; connect-src http://localhost:3000 http://localhost:8000 https://localhost:3000 ws://localhost:8000; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
 }
