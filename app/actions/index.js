@@ -1,4 +1,4 @@
-import * as TracesActions from './traces.action';
+import * as TracesActions from './traces.actions';
 
 export {
     TracesActions
