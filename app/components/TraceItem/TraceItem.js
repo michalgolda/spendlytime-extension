@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import style from './TraceItem.css';
 
-function TraceItem(props){
-    const { url, time} = props;
-
+function TraceItem({ url, time }){
     return(
         <div className={style.trace}>
             <div className={style.trace__url}>
