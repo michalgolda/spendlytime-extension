@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { WithAuth, TraceItem, LoadingSpin } from '../../components';
 import style from './TraceList.css';
 import { convertStringUrl } from '../../utils';
-import * as TracesActions from '../../actions';
+import { TracesActions } from '../../actions';
 
 
 @connect(
@@ -24,7 +24,7 @@ class TraceList extends Component{
         super(props);
 
         this.state = {
-            'new_trace_url': ''
+            'new_trace_url': convertStringUrl(this.props.browserData.currentTab.url),
         }
 
         this.handleAddTrace = this.handleAddTrace.bind(this);
@@ -40,17 +40,18 @@ class TraceList extends Component{
         console.log(e.target.value);
     }
 
-    handleAddTrace(url){
+    handleAddTrace(e){
+        e.preventDefault();
+
         const data = {
-            'trace_url': url
+            'trace_url': this.state.new_trace_url,
+            'trace_time': null
         }
 
         this.props.actions.addTrace(data);
     }
 
     render(){
-        const currentUrl = convertStringUrl(this.props.browserData.currentTab.url);
-
         if(this.props.traces.loading){
             return <LoadingSpin />;
         } else {
@@ -69,13 +70,13 @@ class TraceList extends Component{
             } else {
                 return(
                     <div className={style.container}>
-                        <form onSubmit={this.handleAddTrace(this.state.new_trace_url)} className={style.form}>
+                        <form onSubmit={this.handleAddTrace} className={style.form}>
                             <div className={style.form__container}>
-                                <input onChange={this.handleUrlChange} className={style.form__input} type="text" defaultValue={currentUrl.origin}/>
+                                <input onChange={this.handleUrlChange} className={style.form__input} type="text" defaultValue={this.state.new_trace_url}/>
                             </div>
                             <button className={style.form__submit}>+</button>
                         </form>
-                        <div className={style.list}>
+                        <div className={style.list} style={this.props.traces.data.length >= 6 ? { 'overflowY': 'scroll' } : null}>
                             {this.props.traces.data.map((trace) =>
                                 <TraceItem key={trace.id} url={trace.trace_url} time={trace.trace_time} />
                             )}

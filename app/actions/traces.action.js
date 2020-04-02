@@ -28,10 +28,10 @@ export function addTrace(data){
     return dispatch => {
         dispatch(request());
 
-        apiClient.post('traces', { body: JSON.stringify(data) })
+        apiClient.post('traces/', { body: JSON.stringify(data) })
             .then(
                 response => {
-                    dispatch(success());
+                    dispatch(success(data));
                 },
                 error => {
                     dispatch(failure());
@@ -39,7 +39,7 @@ export function addTrace(data){
             )
     }
 
-    function request() { return { type: tracesConstants.ADD_TRACES_REQUEST } };
-    function success() { return { type: tracesConstants.ADD_TRACES_SUCCESS } };
-    function failure() { return { type: tracesConstants.ADD_TRACES_ERROR } };
+    function request() { return { type: tracesConstants.ADD_TRACE_REQUEST } };
+    function success() { return { type: tracesConstants.ADD_TRACE_SUCCESS } };
+    function failure() { return { type: tracesConstants.ADD_TRACE_ERROR } };
 }

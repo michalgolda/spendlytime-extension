@@ -12,7 +12,7 @@ export function tracesReducer(state = initialState, action){
                 data: action.data
             }
         case tracesConstants.FETCH_TRACES_ERROR:
-            return { loading: false };
+            return { loading: true };
         default:
             return state;
     }
