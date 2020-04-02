@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { loggedIn } from '../../utils';
 
 import style from './Navbar.css';
 
-export default class Navbar extends Component{
-    render(){
-       if(loggedIn){
+export default function Navbar(){
+    if(loggedIn){
         return(
             <div className={style.navbar}>
                 <div className={style.navbar__logo}>
@@ -27,8 +26,7 @@ export default class Navbar extends Component{
                 </div>
             </div>
         );
-       } else {
-           return null;
-       }
+    } else {
+        return null;
     }
 }
