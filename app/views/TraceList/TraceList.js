@@ -90,9 +90,19 @@ class TraceList extends Component{
                             </div>
                             <button className={style.form__submit}>+</button>
                         </form>
-                        <div className={style.list} style={this.props.traces.data.length >= 6 ? { 'overflowY': 'scroll' } : null}>
+                        <div
+                            className={style.list}
+                            style={this.props.traces.data.length >= 6
+                                ? { 'overflowY': 'scroll' }
+                                : null
+                            }
+                        >
                             {this.props.traces.data.map((trace) =>
-                                <TraceItem key={trace.id} url={trace.trace_url} time={trace.trace_time} />
+                                <TraceItem
+                                    key={trace.id}
+                                    url={trace.trace_url}
+                                    time={trace.trace_time}
+                                />
                             )}
                         </div>
                     </div>
