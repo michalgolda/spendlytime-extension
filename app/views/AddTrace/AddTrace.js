@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import style from './AddTrace.css';
-import { WithAuth } from '../../components';
-
 import { convertStringUrl } from '../../utils';
 
-import { connect } from 'react-redux';
+import { WithAuth } from '../../components';
+
 
 @connect(
     state => ({
@@ -13,10 +13,16 @@ import { connect } from 'react-redux';
     })
 )
 class AddTrace extends Component{
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            currentUrl: convertStringUrl(this.props.browserData.currentTab.url)
+        };
+    }
+
     render(){
-
-        const currentUrl = convertStringUrl(this.props.browserData.currentTab.url);
-
         return(
             <div className={style.wrapper}>
                 <div className={style.texts}>
@@ -28,7 +34,7 @@ class AddTrace extends Component{
                 <form className={style.form}>
                     <div className={style.form__group}>
                         <label className={style.form__label}>Adres URL strony</label>
-                        <input defaultValue={currentUrl.origin} type="text" className={`${style.form__input} ${style.form__input_url}`}/>
+                        <input defaultValue={this.statecurrentUrl.origin} type="text" className={`${style.form__input} ${style.form__input_url}`}/>
                     </div>
                     <button className={style.form__submit}>Start</button>
                 </form>

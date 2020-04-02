@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import style from './Login.css';
-
 import { LoginForm } from '../../components';
+
 
 export default class Login extends Component{
     render(){

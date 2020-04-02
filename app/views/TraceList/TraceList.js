@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { WithAuth, TraceItem, LoadingSpin } from '../../components';
 import style from './TraceList.css';
 import { convertStringUrl } from '../../utils';
+
+import { WithAuth, TraceItem, LoadingSpin } from '../../components';
 import { TracesActions } from '../../actions';
 
 
