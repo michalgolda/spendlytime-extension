@@ -45,7 +45,7 @@ class TraceList extends Component{
 
         const data = {
             'trace_url': this.state.new_trace_url,
-            'trace_time': null
+            'trace_time': '0:0'
         }
 
         this.props.actions.addTrace(data);
