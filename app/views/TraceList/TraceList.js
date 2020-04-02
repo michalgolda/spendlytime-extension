@@ -24,27 +24,34 @@ class TraceList extends Component{
         super(props);
 
         this.state = {
-            'new_trace_url': convertStringUrl(this.props.browserData.currentTab.url),
+            'input_values': {
+                'url': {
+                    value: convertStringUrl(this.props.browserData.currentTab.url)
+                }
+            },
         }
 
         this.handleAddTrace = this.handleAddTrace.bind(this);
-        this.handleUrlChange = this.handleUrlChange.bind(this);
+        this.handleChangeInputValue = this.handleChangeInputValue.bind(this);
     }
 
     componentDidMount(){
         this.props.actions.fetchTraces();
     }
 
-    handleUrlChange(e){
-        this.setState({ new_trace_url: e.target.value });
-        console.log(e.target.value);
+    handleChangeInputValue(e){
+        const inputName = e.target.name;
+        const inputValue = e.target.value;
+
+        this.setState({ input_values: { [inputName]: { value: inputValue } } });
+
     }
 
     handleAddTrace(e){
         e.preventDefault();
 
         const data = {
-            'trace_url': this.state.new_trace_url,
+            'trace_url': this.state.input_values.url.value,
             'trace_time': '0:0'
         }
 
@@ -72,7 +79,13 @@ class TraceList extends Component{
                     <div className={style.container}>
                         <form onSubmit={this.handleAddTrace} className={style.form}>
                             <div className={style.form__container}>
-                                <input onChange={this.handleUrlChange} className={style.form__input} type="text" defaultValue={this.state.new_trace_url}/>
+                                <input
+                                    onChange={this.handleChangeInputValue}
+                                    className={style.form__input}
+                                    type="text"
+                                    name="url"
+                                    defaultValue={this.state.input_values.url.value}
+                                />
                             </div>
                             <button className={style.form__submit}>+</button>
                         </form>
