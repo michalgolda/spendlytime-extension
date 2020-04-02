@@ -4,7 +4,6 @@
   "description": "This extension is used to track your time on the Internet.",
   "scripts": {
     "dev": "node scripts/dev",
-    "debug": "remotedev --hostname=localhost --port=8000",
     "build": "node scripts/build",
     "compress": "node scripts/compress",
     "compress-keygen": "crx keygen",
@@ -79,6 +78,5 @@
     "react-router-dom": "^5.1.2",
     "redux": "^3.2.1",
     "redux-thunk": "^2.0.1",
-    "remotedev-server": "^0.3.1"
   }
 }
