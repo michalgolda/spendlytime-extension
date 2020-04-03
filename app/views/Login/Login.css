@@ -1,6 +1,6 @@
 .wrapper{
     text-align: center;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .wrapper__text__title{
@@ -58,4 +58,28 @@
 
 .logo__small{
     font-size: 1.7rem;
+}
+
+.goTo{
+    width: calc(100% - 40px);
+    height: auto;
+    text-align: center;
+    margin-top: 39px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.goTo__btn{
+    width: 360px;
+    height: 35px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    background: #00D856;
+    outline: none;
+    font-size: .9rem;
+}
+
+.goTo__btn:hover{
+    cursor: pointer;
 }

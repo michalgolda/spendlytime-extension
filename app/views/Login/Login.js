@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 
 import style from './Login.css';
-import { LoginForm } from '../../components';
+import { config } from '../../config';
 
 
 export default class Login extends Component{
+
+    constructor(props){
+        super(props);
+
+        this.handleCreateLoginTab = this.handleCreateLoginTab.bind(this);
+    }
+
+    handleCreateLoginTab(e){
+        e.preventDefault();
+
+        chrome.tabs.create({ url: config.login_url }, () => {});
+    }
+
     render(){
         return(
             <div>
@@ -22,7 +35,9 @@ export default class Login extends Component{
                             Aby móc korzystać w pełni z aplikacji musisz się zalogować.
                         </p>
                     </div>
-                    <LoginForm />
+                </div>
+                <div className={style.goTo}>
+                    <button onClick={this.handleCreateLoginTab} className={style.goTo__btn}>Let's start</button>
                 </div>
             </div>
         );
