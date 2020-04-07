@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import { loggedIn } from '../../utils';
+import PropTypes from 'prop-types';
 
 import style from './Navbar.css';
 
-export default function Navbar(){
-    if(loggedIn){
+function Navbar({ userEmail }){
+    if(userEmail){
         return(
             <div className={style.navbar}>
                 <div className={style.navbar__logo}>
@@ -30,3 +29,9 @@ export default function Navbar(){
         return null;
     }
 }
+
+Navbar.propTypes = {
+    userEmail: PropTypes.string
+}
+
+export default Navbar;
