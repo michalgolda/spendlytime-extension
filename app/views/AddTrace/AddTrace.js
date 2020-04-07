@@ -4,15 +4,12 @@ import { connect } from 'react-redux';
 import style from './AddTrace.css';
 import { convertStringUrl } from '../../utils';
 
-import { WithAuth } from '../../components';
-
-
 @connect(
     state => ({
         browserData: state.browserData
     })
 )
-class AddTrace extends Component{
+export default class AddTrace extends Component{
 
     constructor(props){
         super(props);
@@ -42,5 +39,3 @@ class AddTrace extends Component{
         );
     }
 }
-
-export default WithAuth(AddTrace);
