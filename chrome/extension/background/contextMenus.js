@@ -18,5 +18,3 @@ chrome.contextMenus.onClicked.addListener((event) => {
         console.log("Clicked on context menu option.");
     }
 });
-
-//  Cannot create item with duplicate id
