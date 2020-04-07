@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { history } from '../../helpers';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -72,7 +72,7 @@ export default class TraceList extends Component{
                                 Aby rozpocząć analizę spędzonego czasu na danej stronie kliknij w start
                             </p>
                         </div>
-                        <Link to="/trace/add" className={style.noData__addTrace}>+</Link>
+                        <button onClick={() => history.push('trace/add')} className={style.noData__addTrace}>+</button>
                     </div>
                 );
             } else {
