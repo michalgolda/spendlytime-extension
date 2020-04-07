@@ -1,5 +1,7 @@
-import * as TracesActions from './traces.actions';
+import * as tracesActions from './traces.actions';
+import * as userActions from './user.actions';
 
 export {
-    TracesActions
+    tracesActions,
+    userActions
 }
