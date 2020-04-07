@@ -1,4 +1,5 @@
 import { config } from './config';
+import { history } from './helpers';
 
 /** The class using for calling to api */
 export default class ApiClient{
@@ -29,6 +30,10 @@ export default class ApiClient{
         return response.text().then(text => {
             const data = text && JSON.parse(text);
             if(!response.ok){
+                // 403 or 401 because api is support to types of authentication
+                if(response.status === 403 || response.status === 401){
+                    history.push('/login');
+                }
                 const error = data.error.message;
                 return Promise.reject(error);
             }
