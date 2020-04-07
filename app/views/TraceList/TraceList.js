@@ -6,8 +6,8 @@ import { bindActionCreators } from 'redux';
 import style from './TraceList.css';
 import { convertStringUrl } from '../../utils';
 
-import { WithAuth, TraceItem, LoadingSpin } from '../../components';
-import { TracesActions } from '../../actions';
+import { TraceItem, LoadingSpin } from '../../components';
+import { tracesActions } from '../../actions';
 
 
 @connect(
@@ -16,10 +16,10 @@ import { TracesActions } from '../../actions';
         traces: state.traces
     }),
     dispatch => ({
-        actions: bindActionCreators(TracesActions, dispatch)
+        actions: bindActionCreators(tracesActions, dispatch)
     })
 )
-class TraceList extends Component{
+export default class TraceList extends Component{
 
     constructor(props){
         super(props);
@@ -27,7 +27,7 @@ class TraceList extends Component{
         this.state = {
             'input_values': {
                 'url': {
-                    value: convertStringUrl(this.props.browserData.currentTab.url)
+                    value: convertStringUrl(this.props.browserData.currentTab.url).origin
                 }
             },
         }
@@ -111,5 +111,3 @@ class TraceList extends Component{
         }
     }
 }
-
-export default WithAuth(TraceList);
