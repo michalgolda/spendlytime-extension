@@ -21,6 +21,12 @@ export function tracesReducer(state = initialState, action) {
                     }
                 ]
             };
+        case tracesConstants.DELETE_TRACE_SUCCESS:
+            return Object.assign({}, state, {
+                data: state.data.filter((trace) => {
+                    return trace.id != action.id
+                })
+            });
         default:
             return state;
     }
