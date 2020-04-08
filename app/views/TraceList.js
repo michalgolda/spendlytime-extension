@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { history } from '../../helpers';
+import { history } from '../helpers';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import style from './TraceList.css';
-import { convertStringUrl } from '../../utils';
-
-import { TraceItem, LoadingSpin } from '../../components';
-import { tracesActions } from '../../actions';
+import { convertStringUrl } from '../utils';
+import { TraceItem, LoadingSpin } from '../components';
+import { tracesActions } from '../actions';
 
 
 @connect(
@@ -65,33 +62,33 @@ export default class TraceList extends Component{
         } else {
             if(this.props.traces.data.length === 0){
                 return(
-                    <div className={style.wrapper}>
-                        <div className={style.noData}>
-                            <h1 className={style.noData__title}>Uwaga!</h1>
-                            <p className={style.noData__description}>
+                    <div className="noData">
+                        <div className="noData__container">
+                            <h1 className="noData__title">Uwaga!</h1>
+                            <p className="noData__description">
                                 Aby rozpocząć analizę spędzonego czasu na danej stronie kliknij w start
                             </p>
                         </div>
-                        <button onClick={() => history.push('trace/add')} className={style.noData__addTrace}>+</button>
+                        <button onClick={() => history.push('trace/add')} className="noData__btn">+</button>
                     </div>
                 );
             } else {
                 return(
-                    <div className={style.container}>
-                        <form onSubmit={this.handleAddTrace} className={style.form}>
-                            <div className={style.form__container}>
+                    <div className="trace-list__container">
+                        <form onSubmit={this.handleAddTrace} className="trace-list__form">
+                            <div className="trace-list__form__group">
                                 <input
                                     onChange={this.handleChangeInputValue}
-                                    className={style.form__input}
+                                    className="trace-list__form__input"
                                     type="text"
                                     name="url"
                                     defaultValue={this.state.input_values.url.value}
                                 />
                             </div>
-                            <button className={style.form__submit}>+</button>
+                            <button className="trace-list__form__submit">+</button>
                         </form>
                         <div
-                            className={style.list}
+                            className="trace-list__box"
                             style={this.props.traces.data.length >= 6
                                 ? { 'overflowY': 'scroll' }
                                 : null

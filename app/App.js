@@ -3,11 +3,11 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import globalStyle from './App.css';
+import './styles/main.sass';
 
 import { userActions } from './actions';
 import { history } from './helpers';
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 import { views } from './views';
 
 @connect(
@@ -27,8 +27,8 @@ class App extends Component {
   render(){
       return(
         <Router history={history}>
-          <div className={globalStyle.view}>
-            {/* 
+          <div className="view">
+            {/*
              Navbar is required userEmail for success rendering this component,
              but this component not rendering if not authenticated.
             */}
@@ -38,10 +38,7 @@ class App extends Component {
               <Route path="/login" component={views.Login} />
              <Route path="/trace/add" component={views.AddTrace} />
             </Switch>
-
-            <footer className={globalStyle.footer}>
-              <p className={globalStyle.footer__text}>Ⓒ 2020 SpendlyTime</p>
-            </footer>
+            <Footer />
           </div>
         </Router>
       );

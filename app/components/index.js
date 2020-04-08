@@ -1,9 +1,15 @@
-import Navbar from './Navbar/Navbar';
-import TraceItem from './TraceItem/TraceItem';
-import LoadingSpin from './LoadingSpin/LoadingSpin';
+import Navbar from './Navbar';
+import TraceItem from './TraceItem';
+import LoadingSpin from './LoadingSpin';
+import Logo from './Logo';
+import SmallLogo from './SmallLogo';
+import Footer from './Footer'
 
 export {
     Navbar,
     TraceItem,
-    LoadingSpin
+    LoadingSpin,
+    Logo,
+    Footer,
+    SmallLogo
 }

@@ -1,6 +1,6 @@
-import Login from './Login/Login';
-import AddTrace from './AddTrace/AddTrace';
-import TraceList from './TraceList/TraceList';
+import Login from './Login';
+import AddTrace from './AddTrace';
+import TraceList from './TraceList';
 
 export const views = {
     Login,
