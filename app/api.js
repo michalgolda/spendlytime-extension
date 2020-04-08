@@ -55,6 +55,11 @@ export default class ApiClient{
         return fetch(this._prepareUrl(endpoint), payload).then(this._handleResponse);
     }
 
+    delete(endpoint, payload){
+        payload.method = 'DELETE';
+        return fetch(this._prepareUrl(endpoint), payload).then(this._handleResponse);
+    }
+
     get resFormat(){
         return this._resFormat;
     }
