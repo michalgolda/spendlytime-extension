@@ -1,4 +1,4 @@
-export const  convertStringUrl = (url) => {
+export const convertStringUrl = (url) => {
     /**
      * This function is converting string url and return URL object
      *
