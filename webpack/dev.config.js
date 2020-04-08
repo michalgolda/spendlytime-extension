@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 const host = 'localhost';
 const port = 3000;
@@ -9,9 +8,10 @@ const hotScript = 'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPubli
 
 const baseDevConfig = () => ({
   devtool: 'eval-cheap-module-source-map',
+  mode: "development",
   entry: {
     spendlytime: [customPath, hotScript, path.join(__dirname, '../chrome/extension/spendlytime')],
-    background: [customPath, hotScript, path.join(__dirname, '../chrome/extension/background')],
+    background: [customPath, hotScript, path.join(__dirname, '../chrome/extension/background')]
   },
   devMiddleware: {
     publicPath: `http://${host}:${port}/js`,
@@ -50,18 +50,19 @@ const baseDevConfig = () => ({
       loader: 'babel-loader',
       exclude: /node_modules/,
       options: {
-        presets: ['react-hmre']
+        presets: ['@babel/preset-env']
       }
     }, {
-      test: /\.css$/,
+      test: /\.s[ac]ss$/i,
       use: [
-        'style-loader',
-        'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
         {
-          loader: 'postcss-loader',
-          options: {
-            plugins: () => [autoprefixer]
-          }
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader',
+        },
+        {
+          loader: 'sass-loader'
         }
       ]
     }]
