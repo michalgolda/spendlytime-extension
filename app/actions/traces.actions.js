@@ -43,3 +43,23 @@ export function addTrace(data){
     function success(data) { return { type: tracesConstants.ADD_TRACE_SUCCESS, data: data } };
     function failure() { return { type: tracesConstants.ADD_TRACE_ERROR } };
 }
+
+export function deleteTrace(id){
+    return dispatch => {
+        dispatch(request());
+
+        apiClient.delete(`traces/${id}/`, {})
+            .then(
+                response => {
+                    dispatch(success(id));
+                },
+                error => {
+                    dispatch(failure());
+                }
+            )
+    }
+
+    function request() { return { type: tracesConstants.DELTE_TRACE_REQUEST } };
+    function success(id) { return { type: tracesConstants.DELETE_TRACE_SUCCESS, id: id } };
+    function failure() { return { type: tracesConstants.DELETE_TRACE_ERROR } };
+}
