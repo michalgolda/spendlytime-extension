@@ -97,6 +97,7 @@ export default class TraceList extends Component{
                             {this.props.traces.data.map((trace) =>
                                 <TraceItem
                                     key={trace.id}
+                                    id={trace.id}
                                     url={trace.trace_url}
                                     time={trace.trace_time}
                                 />
