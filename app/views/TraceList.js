@@ -99,7 +99,7 @@ export default class TraceList extends Component{
                                     key={trace.id}
                                     id={trace.id}
                                     url={trace.trace_url}
-                                    time={trace.trace_time}
+                                    duration={trace.duration}
                                 />
                             )}
                         </div>

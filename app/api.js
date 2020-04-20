@@ -55,6 +55,14 @@ export default class ApiClient{
         return fetch(this._prepareUrl(endpoint), payload).then(this._handleResponse);
     }
 
+    put(endpoint, payload){
+        payload.method = 'PUT';
+        payload.headers = {
+            'Content-Type': 'application/json'
+        }
+        return fetch(this._prepareUrl(endpoint), payload).then(this._handleResponse);
+    }
+
     delete(endpoint, payload){
         payload.method = 'DELETE';
         return fetch(this._prepareUrl(endpoint), payload).then(this._handleResponse);
